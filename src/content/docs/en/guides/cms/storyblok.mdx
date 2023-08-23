@@ -88,7 +88,8 @@ export default defineConfig({
       },
       apiOptions: {
         // Choose your Storyblok space region
-        region: 'us', // optional,  or 'eu' (default)
+        region: 'us', // optional,  or 'eu' (default),
+        accesToken: env.STORYBLOK_TOKEN
       },
     })
   ],
@@ -99,6 +100,10 @@ The Storyblok integration requires an object with the following properties:
 
 1. `accessToken` - This references the Storyblok API token that you added in the previous step.
 
+    :::caution
+    Don't forget to add the `accesToken` also to `apiOptions`
+    :::
+    
     :::tip
     Since the Astro config file does not normally support environment variables, use the `loadEnv` function from Vite to load them.
     :::
